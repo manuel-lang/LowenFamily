@@ -1,0 +1,18 @@
+{
+  "name": "loewenbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.1.1-alpha.2",
+    "twitter": "^1.7.1"
+  }
+}
