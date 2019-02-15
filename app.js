@@ -1,4 +1,3 @@
-require('dotenv').load();
 const express = require('express');
 const app = express();
 const fileUpload = require('express-fileupload');
@@ -39,7 +38,11 @@ function scrape_insta_hash(tag) {
 }
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(path.resolve('/index.html'));
+});
+
+app.get('/challenges', function (req, res) {
+  res.sendFile(path.resolve('/challenges.html'));
 });
 
 app.get('/instagram/:hashtag', function (req, res) {
