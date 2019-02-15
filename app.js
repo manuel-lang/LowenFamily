@@ -5,8 +5,11 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-app.use(fileUpload());
 app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+  res.sendFile('/challenges.html');
+});
 
 const getContent = function (url) {
   return new Promise((resolve, reject) => {
@@ -37,14 +40,6 @@ function scrape_insta_hash(tag) {
   })
 }
 
-app.get('/', function (req, res) {
-  res.sendFile(path.resolve('/index.html'));
-});
-
-app.get('/challenges', function (req, res) {
-  res.sendFile(path.resolve('/challenges.html'));
-});
-
 app.get('/instagram/:hashtag', function (req, res) {
     scrape_insta_hash(req.params.hashtag).then(images => res.send(images));
 });
@@ -72,6 +67,6 @@ app.post('/upload', function(req, res) {
     });
   });
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log(`Example app listening on port ${process.env.PORT || 3000}!`);
+app.listen(process.env.PORT || 5000, function () {
+  console.log(`Example app listening on port ${process.env.PORT || 5000}!`);
 });
