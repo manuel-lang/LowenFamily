@@ -14,12 +14,36 @@ html {
 
 .header-bar img {
   height: 55px;
-  margin-left: 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+.dropdown-menu {
+  background-color: #074683;
+}
+
+.dropdown-menu li a {
+  padding: .3rem;
+  color: #fff;
+}
+
+.btn-hamburger {
+  color: #fff;
+}
+
+.container, .row {
+  margin: 0px auto;
+  width: 100%;
 }
 
 .hero {
   padding: .25rem 0px !important;
   margin: 0px !important;
+}
+
+.feed-content {
+  margin: 0px auto;
+  width: 100%;
 }
 
 .cardbox {
@@ -276,7 +300,10 @@ html {
 
 @media (min-width: 768px) {
   .header-bar img {
-    height: 55px;
-    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .feed-content {
+    width: 520px;
   }
 }
