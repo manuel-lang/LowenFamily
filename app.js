@@ -3,9 +3,11 @@ const express = require('express');
 const app = express();
 const fileUpload = require('express-fileupload');
 const fs = require('fs');
+const path = require('path');
 const https = require('https');
 
 app.use(fileUpload());
+app.use(express.static('public'));
 
 const getContent = function (url) {
   return new Promise((resolve, reject) => {
@@ -37,7 +39,7 @@ function scrape_insta_hash(tag) {
 }
 
 app.get('/', function (req, res) {
-    res.send("Hello");
+    res.sendFile(path.join(__dirname + '/../frontend/index.html'));
 });
 
 app.get('/instagram/:hashtag', function (req, res) {
