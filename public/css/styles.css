@@ -10,6 +10,11 @@ html {
   height: 40px;
   z-index: 1;
   border-bottom: 3px solid #feed01;
+  color: #fff;
+}
+
+.header-bar span.fa-bars {
+  color: #fff;
 }
 
 .header-bar img {
@@ -22,13 +27,33 @@ html {
   background-color: #074683;
 }
 
+.dropdown-menu li:hover {
+  cursor: hand;
+  background-color: #55a6f6;
+}
+
 .dropdown-menu li a {
   padding: .3rem;
   color: #fff;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  text-decoration: none;
 }
 
 .btn-hamburger {
   color: #fff;
+  padding: .3rem .55rem;
+}
+
+.btn-hamburger:hover,
+.btn-hamburger:visited, 
+.btn-hamburger:active {
+  border: 1px solid #55a6f6;
+  color: #55a6f6;
 }
 
 .container, .row {
