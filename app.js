@@ -14,7 +14,7 @@ app.set('view engine', 'pug');
 const upload = multer({
   dest: 'public/images/uploads/',
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now())
+    cb(null, Date.now() + '-' + file.fieldname)
   }
 }); 
 
@@ -46,6 +46,7 @@ function get_images(tag) {
         let insta_array = JSON.parse(insta_json[0]);
         let images = insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'].map(x => x['node']['display_url']);
         fs.readdir('public/images/uploads', (err, files) => {
+          files.sort(function(a, b){return b-a});
           files.forEach(function(element) {
             images.unshift("images/uploads/" + element);
           });
