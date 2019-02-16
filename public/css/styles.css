@@ -11,6 +11,7 @@ html {
   z-index: 1;
   border-bottom: 3px solid #feed01;
   color: #fff;
+  font-weight: bold;
 }
 
 .header-bar span.fa-bars {
@@ -25,6 +26,8 @@ html {
 
 .dropdown-menu {
   background-color: #074683;
+  min-width: 250px;
+  font-weight: bold;
 }
 
 .dropdown-menu li:hover {
@@ -234,93 +237,20 @@ html {
   border: 2px solid #fff;
 }
 
-/* ------------------------------- */
-
-/* Cardbox Comments
-  ---------------------------------- */
-
-.cardbox-comments {
-  padding: 10px 40px 20px 40px !important;
-  font-size: 0px;
-  text-align: center;
-  display: inline-block;
-}
-
-.cardbox-comments .comment-avatar img {
-  margin-top: 1px;
-  margin-right: 10px;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-}
-
-.cardbox-comments .comment-body {
-  overflow: auto;
-}
-
-.search {
-  position: relative;
-  right: -60px;
-  top: -40px;
-  margin-bottom: -40px;
-  border: 2px solid #f4f4f4;
+.btn-loewen {
   width: 100%;
-  overflow: hidden;
+  margin-top: 10px;
+  background-color: #cccc00;
+  color: #074683;
+  border: 1px solid #074683;
 }
 
-.search input[type="text"] {
-  background-color: #fff;
-  line-height: 10px;
-  padding: 15px 60px 20px 10px;
-  border: none;
-  border-radius: 4px;
-  width: 350px;
-  font-family: 'Rokkitt', serif;
-  font-size: 14px;
-  color: #8d8d8d;
-  height: inherit;
-  font-weight: 700;
-}
-
-.search button {
-  position: absolute;
-  right: 0;
-  top: 0px;
-  border: none;
-  background-color: transparent;
-  color: #bbbbbb;
-  padding: 15px 25px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.search button i {
-  font-size: 20px;
-  line-height: 30px;
-  display: block;
-}
-
-/* ------------------------------- */
-
-/* Author
-  ---------------------------------- */
-
-.author a {
-  font-family: 'Rokkitt', serif;
-  font-size: 16px;
-  color: #00C4CF;
-}
-
-.author p {
-  font-family: 'Rokkitt', serif;
-  font-size: 16px;
-  color: #8d8d8d;
+.btn-loewen-dark {
+  width: 100%;
+  margin-top: 5px;
+  background-color: #074683;
+  color: #cccc00;
+  border: 1px solid #cccc00;
 }
 
 @media (min-width: 768px) {

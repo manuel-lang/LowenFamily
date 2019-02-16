@@ -10,6 +10,11 @@
     text-align: center;
     margin: 55px 0 50px;
 }
+
+.dash-box.disabled {
+    opacity: 0.6;
+}
+
 .dash-box-icon {
     position: absolute;
     transform: translateY(-50%) translateX(-50%);
@@ -66,6 +71,12 @@
     color: #003e85;
     box-shadow: 0 3px 5px #d4d4d4;
 }
+
+a.btn-disabled {
+    color: gray;
+    cursor: not-allowed !important;
+}
+
 .dash-box-body > .dash-box-count {
     display: block;
     font-size: 30px;
@@ -143,4 +154,23 @@
 }
 .dash-box-color-5 .dash-box-icon > i {
     background: #074683;
+}
+
+/****** IMAGE UPLOAD *****/
+.img-content {
+    border: 1px solid #E1E1E1;
+    height: 200px;
+    margin: 0px auto;
+    max-width: 300px;
+}
+
+#uploadedImage {
+    height: 100%;
+    margin: 0px auto;
+    display: block;
+}
+
+input[type="file"] {
+    overflow: hidden;
+    display: none;
 }
