@@ -23,7 +23,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 app.get('/', function (req, res) {
-  get_images('lowenfamily').then(images => res.render('index', { instagram: images }));
+  get_images('1team1ziel').then(images => res.render('index', { instagram: images }));
 });
 
 const getContent = function (url) {
