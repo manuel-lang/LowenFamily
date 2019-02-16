@@ -262,3 +262,7 @@ html {
     width: 520px;
   }
 }
+
+.imgfrontpage {
+  image-orientation: from-image;
+}
