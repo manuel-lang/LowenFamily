@@ -11,18 +11,9 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.set('view engine', 'pug');
 
-var Storage = multer.diskStorage({
-  destination: function(req, file, callback) {
-      callback(null, "./Images");
-  },
-  filename: function(req, file, callback) {
-      callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
-  }
-});
-
-var upload = multer({
-  storage: Storage
-}).array("imgUploader", 1); //Field name and max count
+const upload = multer({
+  dest: 'public/images/uploads/'
+}); 
 
 app.get('/', function (req, res) {
   get_images('lowenfamily').then(images => res.render('index', { instagram: images }));
@@ -62,13 +53,8 @@ function get_images(tag) {
   })
 }
 
-app.post('/upload', function(req, res) {
-  upload(req, res, function(err) {
-      if (err) {
-          return res.end("Something went wrong!");
-      }
-      return res.end("File uploaded sucessfully!.");
-  });
+app.post('/upload', upload.single('pic'), (req, res) => {
+  res.redirect('/');
 });
 
 app.listen(process.env.PORT || 5000, function () {
