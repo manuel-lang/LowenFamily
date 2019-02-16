@@ -20,6 +20,8 @@
                 reader.onload = function (e) {
                     $('#uploadedImage')
                         .attr('src', e.target.result)
+                        .maxWidth(200)
+                        .height(200);
                 };
 
                 reader.readAsDataURL(input.files[0]);
