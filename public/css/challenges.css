@@ -54,7 +54,7 @@
     top: -17px;
     z-index: -2;
 }
-.dash-box-action > button {
+.dash-box-action > a {
     border: none;
     background: #FFF;
     border-radius: 19px;
