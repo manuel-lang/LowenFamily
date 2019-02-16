@@ -25,7 +25,7 @@ var upload = multer({
 }).array("imgUploader", 1); //Field name and max count
 
 app.get('/', function (req, res) {
-  scrape_insta_hash('1team1ziel').then(images => res.render('index', { instagram: images }));
+  get_images('lowenfamily').then(images => res.render('index', { instagram: images }));
 });
 
 const getContent = function (url) {
@@ -43,7 +43,7 @@ const getContent = function (url) {
   })
 };
 
-function scrape_insta_hash(tag) {
+function get_images(tag) {
   return new Promise((resolve, reject) => {
     getContent(`https://www.instagram.com/explore/tags/${tag}/`)
       .then(insta_source => {
@@ -61,20 +61,6 @@ function scrape_insta_hash(tag) {
       .catch(err => reject(err));
   })
 }
-
-app.get('/instagram/:hashtag', function (req, res) {
-    scrape_insta_hash(req.params.hashtag).then(images => res.send(images));
-});
-
-app.get('/imgs/:folder', function (req, res) {
-  console.log(req.params.folder);
-  fs.readdir('public/' + req.params.folder, (err, files) => {
-    if (err) {
-      return res.end(err.stack);
-    }
-    res.send(files);
-  });
-});
 
 app.post('/upload', function(req, res) {
   upload(req, res, function(err) {
