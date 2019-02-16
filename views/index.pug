@@ -1,0 +1,59 @@
+html
+  head
+    meta(http-equiv='content-type', content='text/html', charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Löwen App
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+    link(href='https://fonts.googleapis.com/css?family=Rokkitt', rel='stylesheet')
+    link(href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(href='css/styles.css', rel='stylesheet')
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+  body
+    header
+      .header-wrapper
+        .header-bar
+          img(src='https://www.rhein-neckar-loewen.de/assets/img/rnl-logo-white-outline.svg')
+          a.btn.btn-hamburger(href='#', data-toggle='dropdown')
+            span.fa.fa-bars
+          | Löwen App
+          ul.dropdown-menu(role='menu')
+            li
+              a(href='#') Home
+            li
+              a(href='pages/challenges.html') Challenges
+            li
+              a(href='pages/ranking.html') Ranking
+            li.divider
+            li
+              a(href='pages/shop.html') Fan shop
+            li
+              a(href='#') FAQ
+    section.hero
+      .container
+        .row
+          .feed-content
+            each image in instagram
+              .cardbox.shadow-lg.bg-white
+                .cardbox-heading
+                  .circle.float-right
+                    span.points 100 pts
+ 
+                  // / media
+                  // / cardbox-heading
+                  .cardbox-item
+                    img.img-fluid(src=image, alt='Image')
+                  // / cardbox-item
+                  .cardbox-base
+                    ul.float-right
+                      li
+                        a
+                          i.fa.fa-comments
+                      li
+                        a
+                          i.fa.fa-share-alt
+                    ul
+                      li
+                        a
+                          i.fa.fa-thumbs-up
