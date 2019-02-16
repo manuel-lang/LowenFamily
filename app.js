@@ -11,12 +11,16 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.set('view engine', 'pug');
 
-const upload = multer({
-  dest: 'public/images/uploads/',
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images/uploads/')
+  },
   filename: function (req, file, cb) {
     cb(null, Date.now() + '-' + file.fieldname)
   }
-}); 
+})
+
+var upload = multer({ storage: storage })
 
 app.get('/', function (req, res) {
   get_images('lowenfamily').then(images => res.render('index', { instagram: images }));
