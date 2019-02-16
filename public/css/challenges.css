@@ -190,5 +190,5 @@ input[type="file"] {
 }
 
 a#completedChallenge {
-    display: none !important;
+    display: none;
 }
