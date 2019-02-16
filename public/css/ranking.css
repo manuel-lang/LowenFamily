@@ -15,7 +15,7 @@
 
 .ranking span.fa-trophy {
     font-size: 100px;
-    color: rgb(204, 204, 0, 1);
+    color: #cccc00;
     padding: 1rem;
     display: inline-block;
 }
@@ -31,7 +31,7 @@
 .btn-loewen {
     width: 100%;
     margin-top: 10px;
-    background-color: rgb(204, 204, 0, 1);
+    background-color: #cccc00;
     color: #074683;
     border: 1px solid #074683;
 }
