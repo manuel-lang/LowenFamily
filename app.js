@@ -11,18 +11,12 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.set('view engine', 'pug');
 
-var Storage = multer.diskStorage({
-  destination: function(req, file, callback) {
-      callback(null, "./Images");
-  },
-  filename: function(req, file, callback) {
-      callback(null, file.fieldname + "_" + Date.now() + "_" + file.originalname);
+const upload = multer({
+  dest: 'public/images/uploads/',
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + '-' + file.fieldname)
   }
-});
-
-var upload = multer({
-  storage: Storage
-}).array("imgUploader", 1); //Field name and max count
+}); 
 
 app.get('/', function (req, res) {
   get_images('lowenfamily').then(images => res.render('index', { instagram: images }));
@@ -52,6 +46,7 @@ function get_images(tag) {
         let insta_array = JSON.parse(insta_json[0]);
         let images = insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'].map(x => x['node']['display_url']);
         fs.readdir('public/images/uploads', (err, files) => {
+          files.sort(function(a, b){return b-a});
           files.forEach(function(element) {
             images.unshift("images/uploads/" + element);
           });
@@ -62,13 +57,8 @@ function get_images(tag) {
   })
 }
 
-app.post('/upload', function(req, res) {
-  upload(req, res, function(err) {
-      if (err) {
-          return res.end("Something went wrong!");
-      }
-      return res.end("File uploaded sucessfully!.");
-  });
+app.post('/upload', upload.single('pic'), (req, res) => {
+  res.redirect('/');
 });
 
 app.listen(process.env.PORT || 5000, function () {
