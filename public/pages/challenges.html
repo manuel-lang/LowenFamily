@@ -17,6 +17,8 @@
             var challengeCompleted = localStorage.getItem('completed');
             if (challengeCompleted == null) {
                 localStorage.setItem('completed', 0);
+                document.getElementById('completedChallenge').style.display='none';
+                document.getElementById('openChallenge').style.display='inline-block';
             } else {
                 document.getElementById('openChallenge').style.display='none';
                 document.getElementById('completedChallenge').style.display='inline-block';
