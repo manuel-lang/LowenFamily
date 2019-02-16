@@ -25,7 +25,7 @@ var upload = multer({
 }).array("imgUploader", 1); //Field name and max count
 
 app.get('/', function (req, res) {
-  scrape_insta_hash('1team1ziel').then(images => res.render('index', { data: images}));
+  scrape_insta_hash('1team1ziel').then(images => res.render('index', { instagram: images }));
 });
 
 const getContent = function (url) {
@@ -51,7 +51,12 @@ function scrape_insta_hash(tag) {
         let insta_json = shards[1].split(';</script>');
         let insta_array = JSON.parse(insta_json[0]);
         let images = insta_array['entry_data']['TagPage'][0]['graphql']['hashtag']['edge_hashtag_to_media']['edges'].map(x => x['node']['display_url']);
-        resolve(images);
+        fs.readdir('public/images/uploads', (err, files) => {
+          files.forEach(function(element) {
+            images.unshift("images/uploads/" + element);
+          });
+          resolve(images);
+        }); 
       })
       .catch(err => reject(err));
   })
@@ -61,10 +66,14 @@ app.get('/instagram/:hashtag', function (req, res) {
     scrape_insta_hash(req.params.hashtag).then(images => res.send(images));
 });
 
-app.get('/images/:folder', function (req, res) {
-    fs.readdir(req.params.folder, (err, files) => {
-        res.send(files);
-    });
+app.get('/imgs/:folder', function (req, res) {
+  console.log(req.params.folder);
+  fs.readdir('public/' + req.params.folder, (err, files) => {
+    if (err) {
+      return res.end(err.stack);
+    }
+    res.send(files);
+  });
 });
 
 app.post('/upload', function(req, res) {
