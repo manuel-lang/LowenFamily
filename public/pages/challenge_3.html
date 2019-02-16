@@ -12,26 +12,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script>
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#uploadedImage')
-                        .attr('src', e.target.result)
-                        .width(300)
-                        .height(300);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function updateStorage() {
-            localStorage.setItem('completed', 1);
-        }
-    </script>
 </head>
 
 <body>
@@ -55,18 +35,12 @@
     <div class="container">
         <div class="row">
             <div class="description">
-                <p>Take a picture with any rival fan and upload it here.</p>
-                <div>
-                    <div class="img-content">
-                        <img src="../images/img_placeholder.png" id="uploadedImage" alt="uploaded image">
-                    </div>
-
-                    <form id="frmUploader" enctype="multipart/form-data" action="/upload" method="post">
-                        <label for="fileUpload" class="btn btn-loewen">Upload a picture</label>
-                        <input type="file"" id="fileUpload" name="pic" onchange="readURL(this)"
-                            accept="image/*">
-                        <button class="btn btn-loewen-dark" onclick="updateStorage()">Submit</button>
-                    </form>
+                <p>Visit one of our food and beverages trucks and buy a beer. Scan the QR code on the glass to complete
+                    the challenge and earn 20 points.
+                    Have fun!
+                </p>
+                <div class="img-content">
+                    <img id="#uploadedImage" src="../images/beer.jpg" alt="beer">
                 </div>
             </div>
         </div>

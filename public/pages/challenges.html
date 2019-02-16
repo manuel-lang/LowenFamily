@@ -18,13 +18,18 @@
             if (challengeCompleted == null) {
                 localStorage.setItem('completed', 0);
                 document.getElementById('completedChallenge').style.display='none';
+                document.getElementById('lockedChallenge3').style.display='inline-block';
+                document.getElementById('openChallenge3').style.display='none';
                 document.getElementById('openChallenge').style.display='inline-block';
             } else {
+                document.getElementById('lockedChallenge3').style.display='none';
+                document.getElementById('openChallenge3').style.display='inline-block';
                 document.getElementById('openChallenge').style.display='none';
                 document.getElementById('completedChallenge').style.display='inline-block';
-            }          
-            
-        });    
+                $('.dash-box-color-3').removeClass('disabled');
+            }                   
+        }); 
+        
     </script>
 </head>
 
@@ -50,7 +55,7 @@
         <div class="row">
             <div class="col-md-4">
 
-                <div class="dash-box dash-box-color-1" onclick="location.href='challenge_1.html';">
+                <div class="dash-box dash-box-color-1">
                     <div class="dash-box-icon">
                         <i class="fa fa-camera"></i>
                     </div>
@@ -60,14 +65,14 @@
                     </div>
 
                     <div class="dash-box-action">
-                        <a href="challenge_1.html" id="openChallenge" class="btn"><i class="fa fa-unlock"></i>&nbsp;More Info</a>
+                        <a href="challenge_1.html" id="openChallenge" class="btn"><i class="fa fa-unlock"></i>&nbsp;Play</a>
                         <a href="challenge_2.html" id="completedChallenge" class="btn"><i class="fa fa-check"></i>&nbsp;Completed</a>
                     </div>
                 </div>
 
             </div>
             <div class="col-md-4">
-                <div class="dash-box dash-box-color-2" onclick="location.href='challenge_2.html';">
+                <div class="dash-box dash-box-color-2">
                     <div class="dash-box-icon">
                         <i class="fa fa-trophy"></i>
                     </div>
@@ -92,7 +97,8 @@
                     </div>
 
                     <div class="dash-box-action">
-                        <a href="#" class="btn btn-disabled"><i class="fa fa-lock"></i>&nbsp;Locked</a>
+                        <a href="challenge_3.html" id="openChallenge3" class="btn"><i class="fa fa-unlock"></i>&nbsp;Play</a>
+                        <a href="#" class="btn btn-disabled" id="lockedChallenge3"><i class="fa fa-lock"></i>&nbsp;Locked</a>
                     </div>
                 </div>
             </div>
