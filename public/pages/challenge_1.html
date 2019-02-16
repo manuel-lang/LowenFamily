@@ -27,6 +27,10 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
+
+        function updateStorage() {
+            localStorage.setItem('completed', 1);
+        }
     </script>
 </head>
 
@@ -61,7 +65,7 @@
                         <label for="fileUpload" class="btn btn-loewen">Upload a picture</label>
                         <input type="file"" id="fileUpload" name="pic" onchange="readURL(this)"
                             accept="image/*">
-                        <button class="btn btn-loewen-dark">Submit</button>
+                        <button class="btn btn-loewen-dark" onclick="updateStorage()">Submit</button>
                     </form>
                 </div>
             </div>

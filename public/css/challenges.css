@@ -188,3 +188,7 @@ input[type="file"] {
     color: #074683;
     font-size: 50px;
 }
+
+a#completedChallenge {
+    display: none !important;
+}
