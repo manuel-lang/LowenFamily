@@ -169,6 +169,7 @@ a.btn-disabled {
     margin: 0px auto;
     display: block;
     max-width: 200px;
+    image-orientation: from-image;
 }
 
 input[type="file"] {
