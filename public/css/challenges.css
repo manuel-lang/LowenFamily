@@ -164,7 +164,7 @@ a.btn-disabled {
     max-width: 300px;
 }
 
-#uploadedImage, .img-content img {
+#uploadedImage, #imgBeer {
     height: 300px;
     margin: 0px auto;
     display: block;
