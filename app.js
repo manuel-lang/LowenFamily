@@ -12,7 +12,10 @@ app.use(bodyParser.json());
 app.set('view engine', 'pug');
 
 const upload = multer({
-  dest: 'public/images/uploads/'
+  dest: 'public/images/uploads/',
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
 }); 
 
 app.get('/', function (req, res) {
