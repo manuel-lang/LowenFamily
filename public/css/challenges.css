@@ -174,3 +174,16 @@ input[type="file"] {
     overflow: hidden;
     display: none;
 }
+
+/***************************/
+.done {
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+    color: #074683;
+}
+
+.done span.fa-check-circle {
+    color: #074683;
+    font-size: 50px;
+}
