@@ -4,7 +4,7 @@ This application is a web application that was developed during [Hackdays Rhein-
 
 ## What does it do?
 
-LowenFamily is a web application that aims to engage fans of the team before, during and after the games. By chosing a gamification approach, we encourage people to be active and share content in order to gain points and potentially win special prizes such as limited edition merchandise or other unique rewards. In its current state, the app contains a first challenge to share images that we display in the live feet on the index page in addition to public instagram posts using the hashtag #1team1ziel.
+LowenFamily is a web application that aims to engage fans of the team before, during and after the games. By chosing a gamification approach, we encourage people to be active and share content in order to gain points and potentially win special prizes such as limited edition merchandise or other unique rewards. In its current state, the app contains a first challenge to share images that we display in the live feet on the index page in addition to public instagram posts using the hashtag [#1team1ziel](https://www.instagram.com/explore/tags/1team1ziel/).
 
 ## How does it work?
 
