@@ -1,4 +1,4 @@
-# LowenLove
+# LowenFamily
 
 This application is a web application that was developed during [Hackdays Rhein-Neckar 2019](https://hack-days.de/rhein-neckar/home) as submission for the [Rhein-Neckar Löwen](https://www.rhein-neckar-loewen.de) challenge. We were happy to be selected as the winner of the challenge and also awarded for the best pitch over more than 250 participant.
 
